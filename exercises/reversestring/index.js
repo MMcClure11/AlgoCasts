@@ -24,20 +24,22 @@
 
 // Stephen Solve 2, "Don't use reverse Helper"
 
-function reverse(str) {
-   reversed = '';
+// function reverse(str) {
+//    reversed = '';
 
-   for (let character of str){
-     reversed = character + reversed;
-   }
+//    for (let character of str){
+//      reversed = character + reversed;
+//    }
    
-   return reversed;
-}
+//    return reversed;
+// }
 
-// Stephen Solve 3
+// Stephen Solve 3, more complicated with reduce helper for array
 
 function reverse(str){
-
+  return str.split('').reduce((reversed, character) => {
+    return character + reversed;
+  }, '');
 }
 
 module.exports = reverse;
