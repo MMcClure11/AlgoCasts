@@ -34,12 +34,10 @@
 //    return reversed;
 // }
 
-// Stephen Solve 3, more complicated with reduce helper for array
+// Stephen Solve 3, more complicated with reduce helper for array, wow the interviewer
 
 function reverse(str){
-  return str.split('').reduce((reversed, character) => {
-    return character + reversed;
-  }, '');
+  return str.split('').reduce((reversed, character) => character + reversed, '');
 }
 
 module.exports = reverse;
