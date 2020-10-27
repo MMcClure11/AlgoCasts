@@ -4,9 +4,34 @@
 // form the same word if it is reversed. *Do* include spaces
 // and punctuation in determining if the string is a palindrome.
 // --- Examples:
-//   palindrome("abba") === true
-//   palindrome("abcdefg") === false
+//   palindrome("abba") === true "abba"
+//   palindrome("abcdefg") === false 'gfedcba'
 
-function palindrome(str) {}
+//my attempt...
+// function palindrome(str) {
+//   let arr = str.split('')
+//   let reverseArr = arr.reverse()
+//   let i;
+//   for (i = 0; i < arr.length; i++) {
+//     if (arr[i] === reverseArr[i]){
+//       return true
+//     } else {
+//       return false
+//     }
+//   }
+// }
 
+//Stephen's first Solve
+// function palindrome(str){
+//   const reversed = str.split('').reverse().join('');
+//   return str === reversed;
+// }
+
+//Stephen's second Solve using Array.prototype.every(), does more comparisons than necessary
+//doing twice as much work, 'double comparison'
+function palindrome(str){
+  return str.split('').every((char, i) => {
+    return char === str[str.length - i - 1];
+  })
+}
 module.exports = palindrome;
