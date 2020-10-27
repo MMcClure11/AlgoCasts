@@ -29,9 +29,18 @@
 
 //Stephen's second Solve using Array.prototype.every(), does more comparisons than necessary
 //doing twice as much work, 'double comparison'
+// function palindrome(str){
+//   return str.split('').every((char, i) => {
+//     return char === str[str.length - i - 1];
+//   })
+// }
+
+//found solution from stack overflow...
 function palindrome(str){
-  return str.split('').every((char, i) => {
-    return char === str[str.length - i - 1];
-  })
+  var len = Math.floor(str.length / 2);
+  for (var i = 0; i < len; i++)
+    if (str[i] !== str[str.length - i - 1])
+      return false;
+  return true;
 }
 module.exports = palindrome;
