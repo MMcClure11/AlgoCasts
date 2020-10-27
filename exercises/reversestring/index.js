@@ -36,8 +36,22 @@
 
 // Stephen Solve 3, more complicated with reduce helper for array, wow the interviewer
 
+// function reverse(str){
+//   // debugger;
+//   return str.split('').reduce((reversed, character) => character + reversed, '');
+// }
+
+// reverse('asdf')
+
+//new attempt next day!
+
 function reverse(str){
-  return str.split('').reduce((reversed, character) => character + reversed, '');
+  let arr = str.split('')
+  let newArr = []
+  arr.forEach(char => {
+    newArr.unshift(char)
+  })
+  return newArr.join('')
 }
 
 module.exports = reverse;
