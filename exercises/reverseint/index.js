@@ -12,7 +12,7 @@
 
 function reverseInt(n) {
   const numArr = n.toString().split('')
-  newArr = []
+  let newArr = []
   if (Math.sign(n) === -1){
     newArr.push("-")
     let alteredReverseArr = numArr.slice(1).reverse()
