@@ -24,27 +24,37 @@
 //   return Object.keys(hash).find(key => hash[key] === highestValue);
 // }
 
+//Stephen's Solve
+// function maxChar(str){
+//   const charMap= {};
+//   let max = 0;
+//   let maxChar = '';
+
+//   for (let char of str){
+//     if (charMap[char]){
+//       charMap[char]++;
+//     } else {
+//       charMap[char] = 1;
+//     }
+//   }
+//   //uses keys of object
+//   for (let char in charMap){
+//     if (charMap[char] > max){
+//       max = charMap[char];
+//       maxChar = char;
+//     }
+//   }
+
+//   return maxChar;
+// }
+
+
+//Stack Overflow using reduce and ES6 syntax
 function maxChar(str){
-  const charMap= {};
-  let max = 0;
-  let maxChar = '';
-
+  let obj = {}
   for (let char of str){
-    if (charMap[char]){
-      charMap[char]++;
-    } else {
-      charMap[char] = 1;
-    }
+    obj[char] = obj[char] + 1 || 1;
   }
-  //uses keys of object
-  for (let char in charMap){
-    if (charMap[char] > max){
-      max = charMap[char];
-      maxChar = char;
-    }
-  }
-
-  return maxChar;
+  return Object.keys(obj).reduce((a, b) => obj[a] > obj[b] ? a : b);
 }
-
 module.exports = maxChar;
