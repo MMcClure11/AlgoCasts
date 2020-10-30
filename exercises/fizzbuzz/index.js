@@ -12,6 +12,22 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+//My Solve, had to stack overflow a solution to make an array of numbers 1 -> n
+//about 20 min, actual fizz buzz part was very easy
+function fizzBuzz(n) {
+  let arr = Array.from(Array(n), (e, i) => i +1)
+  arr.forEach(num => {
+    if (num % 3 === 0 && num % 5 === 0){
+      console.log("fizzbuzz")
+    } else if ( num % 3 === 0 ){
+      console.log("fizz")
+    } else if (num % 5 === 0) {
+      console.log("buzz")
+    } else {
+      console.log(num)
+    }
+  })
+  
+}
 
 module.exports = fizzBuzz;
