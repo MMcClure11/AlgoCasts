@@ -7,15 +7,16 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-//Stephen's Solve 2 - regex
-//.match looks for anything that matches inside the [], 
-//the g is to make it go through all the string, not stop at the first match,
-//the i makes it case insensitive
-//matches returns either an array or null
+//refactoring my solve
 function vowels(str) {
-  const matches = str.match(/[aeiou]/gi);
-
-  return matches ? matches.length : 0
+  let vowelArr = ['a', 'e', 'i', 'o', 'u']
+  let obj = {}
+  for (let char of str.toLowerCase()) {
+    if (vowelArr.includes(char)) {
+      obj[vowels] = obj[vowels] + 1 || 1
+    }
+  }
+  return obj[vowels] ? obj[vowels] : 0
 }
 
 module.exports = vowels;
@@ -50,4 +51,15 @@ module.exports = vowels;
 //   }
 
 //   return count;
+// }
+
+//Stephen's Solve 2 - regex
+//.match looks for anything that matches inside the [], 
+//the g is to make it go through all the string, not stop at the first match,
+//the i makes it case insensitive
+//matches returns either an array or null
+// function vowels(str) {
+//   const matches = str.match(/[aeiou]/gi);
+
+//   return matches ? matches.length : 0
 // }
