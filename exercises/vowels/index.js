@@ -7,6 +7,26 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {}
+//Stephen's Solve 1 - iterative
+function vowels(str) {
+  
+}
 
 module.exports = vowels;
+
+
+//my own first attempt, passes 15 minutes, forgot how to build up the object (obj[vowels] = obj[vowels] + 1 || 1)
+// function vowels(str) {
+//   let obj = {}
+//   for (let char of str) {
+//     if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u' ||
+//     char === 'A' || char === 'E' || char === 'I' || char === 'O' || char === 'U') {
+//       obj[vowels] = obj[vowels] + 1 || 1
+//     }
+//   }
+//   if (obj[vowels]) {
+//     return obj[vowels]
+//   } else {
+//     return 0
+//   }
+// }
