@@ -7,6 +7,12 @@
 //   palindrome("abba") === true "abba"
 //   palindrome("abcdefg") === false 'gfedcba'
 
+//Solved 1/12/2021
+const palindrome = str => {
+  let reversed = str.split('').reduce((rev, char) => char + rev, '')
+  return str === reversed
+}
+
 //my attempt...
 // function palindrome(str) {
 //   let arr = str.split('')
@@ -36,11 +42,11 @@
 // }
 
 //found solution from stack overflow...
-function palindrome(str){
-  var len = Math.floor(str.length / 2);
-  for (var i = 0; i < len; i++)
-    if (str[i] !== str[str.length - i - 1])
-      return false;
-  return true;
-}
+// function palindrome(str){
+//   var len = Math.floor(str.length / 2);
+//   for (var i = 0; i < len; i++)
+//     if (str[i] !== str[str.length - i - 1])
+//       return false;
+//   return true;
+// }
 module.exports = palindrome;
