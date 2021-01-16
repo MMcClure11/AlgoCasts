@@ -50,11 +50,45 @@
 
 
 //Stack Overflow using reduce and ES6 syntax
-function maxChar(str){
-  let obj = {}
-  for (let char of str){
-    obj[char] = obj[char] + 1 || 1;
+// function maxChar(str){
+//   let obj = {}
+//   for (let char of str){
+//     obj[char] = obj[char] + 1 || 1;
+//   }
+//   return Object.keys(obj).reduce((a, b) => obj[a] > obj[b] ? a : b);
+// }
+
+
+
+
+
+
+
+//Common String Questions:
+  //What is the most common character in the string?
+  //Does sthring A have the same characters as string B (is it an anagram)?
+  //Does the given string have any repeated characters in it?
+
+//1/16/21
+//I solved it!!
+const maxChar = str => {
+
+  hash = {}
+  for(let char of str) {
+    if(hash[char]) {
+      hash[char] ++
+    } else {
+      hash[char] = 1
+    }
   }
-  return Object.keys(obj).reduce((a, b) => obj[a] > obj[b] ? a : b);
+  let max = 0
+  let maxChars = ''
+  for(let char in hash) {
+    if(hash[char] > max) {
+      max = hash[char]
+      maxChars = char
+    }
+  }
+  return maxChars
 }
 module.exports = maxChar;
