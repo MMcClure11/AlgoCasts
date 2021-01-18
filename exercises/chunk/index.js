@@ -31,7 +31,7 @@
 //   return chunked
 // }
 
-//Stephen's Solve 2 
+// Stephen's Solve 2 
 function chunk(array, size) {
   const chunked = [];
   let index = 0;
