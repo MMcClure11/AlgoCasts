@@ -11,13 +11,13 @@
 //Stephen's Solve 2. has some interesting performance issues we'll discuss in the future
 // uses array method: .sort()
 
-function anagrams(stringA, stringB) {
-  return cleanString(stringA) === cleanString(stringB);
-}
+// function anagrams(stringA, stringB) {
+//   return cleanString(stringA) === cleanString(stringB);
+// }
 
-function cleanString(str) {
-  return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
-}
+// function cleanString(str) {
+//   return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+// }
 
 //remove spaces and puncuation
 //lower case the string
@@ -26,7 +26,7 @@ function cleanString(str) {
 // let newWord = word.replace(/[^\w]/g, "").toLowerCase();
 // console.log(newWord)
 
-module.exports = anagrams;
+
 
 //my first attempt...i did it!
 // function anagrams(stringA, stringB) {
@@ -88,3 +88,28 @@ module.exports = anagrams;
 //   }
 //   return charMap
 // }
+
+//completed 1/19/21
+const anagrams = (strA, strB) => {
+  let cleanA = strA.replace(/[^\w]/g, '').toLowerCase();
+  let cleanB = strB.replace(/[^\w]/g, '').toLowerCase();
+  objA = {}
+  objB = {}
+  for(let char of strA) {
+    objA[char] ? objA[char] ++ : objA[char] = 1
+  }
+  for(let char of strB) {
+    objB[char] ? objB[char] ++ : objB[char] = 1
+  }
+  if (Object.keys(objA).length !== Object.keys(objB).length){
+    return false
+  }
+  for(let char in objA) {
+    if(objA[char] !== objB[char]) {
+      return false
+    }
+  }
+  return true
+}
+
+module.exports = anagrams;
