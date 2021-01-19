@@ -95,10 +95,10 @@ const anagrams = (strA, strB) => {
   let cleanB = strB.replace(/[^\w]/g, '').toLowerCase();
   objA = {}
   objB = {}
-  for(let char of strA) {
+  for(let char of cleanA) {
     objA[char] ? objA[char] ++ : objA[char] = 1
   }
-  for(let char of strB) {
+  for(let char of cleanB) {
     objB[char] ? objB[char] ++ : objB[char] = 1
   }
   if (Object.keys(objA).length !== Object.keys(objB).length){
