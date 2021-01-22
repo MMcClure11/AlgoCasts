@@ -8,22 +8,36 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 //Stephen Solve 2
-function capitalize(str) {
-  let result = str[0].toUpperCase();
-  for (let i = 1; i < str.length; i++){
-    if (str[i - 1] === ' ') {
-      result += str[i].toUpperCase();
-    } else {
-      result += str[i];
-    }
-  }
-  return result;
-}
+// function capitalize(str) {
+//   let result = str[0].toUpperCase();
+//   for (let i = 1; i < str.length; i++){
+//     if (str[i - 1] === ' ') {
+//       result += str[i].toUpperCase();
+//     } else {
+//       result += str[i];
+//     }
+//   }
+//   return result;
+// }
 
 //standard library methods: .slice() on a string
 //const word = "there"
 //word.slice(1) //=> here
 //word[0].toUpperCase() //=> T
+
+//My solve 1/21/21 less than 10 minutes
+const capitalize = (str) => {
+  let array = str.split(' ')
+  let result = []
+  for(let word of array) {
+    let arrWord = word.split('')
+    let newWord = ''
+    newWord += arrWord[0].toUpperCase()
+    newWord += arrWord.slice(1, arrWord.length + 1).join('')
+    result.push(newWord)
+  }
+  return result.join(' ')
+}
 
 module.exports = capitalize;
 
