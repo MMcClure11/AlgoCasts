@@ -14,29 +14,47 @@
 //       ' ### '
 //       '#####'
 
-//Stephen solve two recursion, got most of it, just missed how to set up if for checking level.length === 2 * n - 1
-function pyramid(n, row = 0, level = '') {
-  if (n === row) {
-    return;
-  }  
-
-  if (level.length === 2 * n - 1) {
+//1/26/21 woohoo I did it!! used knowledge of the steps problem and capitalize algo to make a new solve
+const pyramid = (n) => {
+  for(let r = 0; r < n; r++ ){
+    let stair = ''
+    for(let c = 0; c < n; c++){
+      if(c <= r){
+        stair += '#'
+      } else {
+        stair += ' '
+      }
+    }
+    let level = ''
+    level = stair.split('').reverse().join('') + stair.slice(1)
     console.log(level)
-    return pyramid(n, row + 1);
   }
-
-  const midpoint = Math.floor((2 * n - 1) / 2);
-  let add; 
-
-  if (midpoint - row <= level.length && midpoint + row >= level.length) {
-    add = '#';
-  } else {
-    add = ' ';
-  }
-  pyramid(n, row, level + add)
 }
 
+
 module.exports = pyramid;
+
+//Stephen solve two recursion, got most of it, just missed how to set up if for checking level.length === 2 * n - 1
+// function pyramid(n, row = 0, level = '') {
+//   if (n === row) {
+//     return;
+//   }  
+
+//   if (level.length === 2 * n - 1) {
+//     console.log(level)
+//     return pyramid(n, row + 1);
+//   }
+
+//   const midpoint = Math.floor((2 * n - 1) / 2);
+//   let add; 
+
+//   if (midpoint - row <= level.length && midpoint + row >= level.length) {
+//     add = '#';
+//   } else {
+//     add = ' ';
+//   }
+//   pyramid(n, row, level + add)
+// }
 
 
 //Stephen solve one. I got how to get number of columns, missed how to get determine if it should have a #
