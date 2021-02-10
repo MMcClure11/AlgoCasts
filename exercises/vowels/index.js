@@ -7,17 +7,38 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-//refactoring my solve
-function vowels(str) {
-  let vowelArr = ['a', 'e', 'i', 'o', 'u']
-  let obj = {}
-  for (let char of str.toLowerCase()) {
-    if (vowelArr.includes(char)) {
-      obj[vowels] = obj[vowels] + 1 || 1
+//My solve 2/10/2021
+const vowels = (str) => {
+  let vs = ['a','e','i','o','u']
+  let newString = ''
+  for(let char of str.toLowerCase()) {
+    if(vs.includes(char)){
+      newString += char
     }
   }
-  return obj[vowels] ? obj[vowels] : 0
-}
+  return newString.length
+};
+
+
+
+
+
+
+
+
+
+
+//refactoring my solve
+// function vowels(str) {
+//   let vowelArr = ['a', 'e', 'i', 'o', 'u']
+//   let obj = {}
+//   for (let char of str.toLowerCase()) {
+//     if (vowelArr.includes(char)) {
+//       obj[vowels] = obj[vowels] + 1 || 1
+//     }
+//   }
+//   return obj[vowels] ? obj[vowels] : 0
+// }
 
 module.exports = vowels;
 
